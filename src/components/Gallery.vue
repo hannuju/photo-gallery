@@ -21,14 +21,16 @@
       </form>
     </div>
 
-    <transition-group name="thumbnailfade" tag="div">
-      <img v-for="thumb in filteredImages"
+    <div id="thumbnails">
+      <transition-group name="thumbnailfade" tag="div">
+        <img v-for="thumb in filteredImages"
            :key="thumb.id"
            @click="showLightbox(thumb.name)"
            :src="thumbnailDir + thumb.name"
            :alt="thumb.alt"
            :title="thumb.alt"/>
-    </transition-group>
+      </transition-group>
+    </div>
 
     <lightbox id="mylightbox"
     ref="lightbox"
@@ -86,20 +88,25 @@ export default {
 </script>
 
 <style>
+#thumbnails {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+img {
+  width: 400px;
+  height: 300px;
+  margin: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  object-fit: contain;
+}
 #filters {
   width: 500px;
   margin: 30px auto;
 }
 #filters span {
   margin: 15px;
-}
-img {
-  width: 270px;
-  height: 180px;
-  margin: 20px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.4s ease;
 }
 .thumbnailfade-leave-active,
 .thumbnailfade-enter-active {
