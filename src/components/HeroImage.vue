@@ -1,6 +1,6 @@
 <template>
   <div class="hero-image">
-    <img alt="Vue logo" src="/img/bird1.jpg">
+    <img alt="Cool image" src="/img/owl1.jpg">
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 img {
-  width: 500px;
+  width: 1000px;
   height: auto;
   margin: 20px;
   border-radius: 3px;
